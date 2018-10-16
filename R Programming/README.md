@@ -10,3 +10,8 @@ Extracts information from the climate-data.csv file containing average daily cli
 * cachematrix.md <br/><br/>
 The cachematrix.R file contains functions makeCacheMatrix and cacheSolve, which work together to solve for the inverse of a matix and to cache the matrix and its inverse. Instructions for this programming assignment are in the cachematrix.md file.
 
+### Loop Functions
+* wk3_quiz_loop_funcs.R <br/><br/>
+Uses the loop functions apply, sapply, and tapply to work with the Iris dataset in R.
+
+
