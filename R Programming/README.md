@@ -5,7 +5,7 @@
 * climate-data.csv <br/><br/>
 Extracts information from the climate-data.csv file containing average daily climate-related measures for unknown year. File has the following columns: Ozone, Solar.R, Wind, Temp, Month, Day.
 
-### Air Polution
+### Air Quality
 * pollutantmean.R
 * complete.R
 * corr.R
@@ -28,4 +28,7 @@ The cachematrix.R file contains functions makeCacheMatrix and cacheSolve, which 
 * wk3_quiz_loop_funcs.R <br/><br/>
 Uses the loop functions apply, sapply, and tapply to work with the Iris dataset in R.
 
-
+### Hospital Care
+* 
+*
+* <br/><br/>
