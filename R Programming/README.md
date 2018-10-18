@@ -29,6 +29,16 @@ The cachematrix.R file contains functions makeCacheMatrix and cacheSolve, which 
 Uses the loop functions apply, sapply, and tapply to work with the Iris dataset in R.
 
 ### Hospital Care
-* 
-*
-* <br/><br/>
+* best.R
+* rankhospital.R
+* rankall.R
+* outcome-of-care-measures.csv <br/><br/>
+The outcome-of-care-measures.csv file contains care data on hosptials in the United States. The measures of interest for this project include: <br/><br/>
+* State
+* Hospital Name
+* 30-day mortality rate for heart attacks
+* 30-day mortality rate for heart failure
+* 30-day mortality rate for pneumonia <br/><br/>
+The best.R file contains a function that returns the name of the hospital with the lowest 30-day mortality for the specified state and outcome (heart attack, heart failure, pneumonia). <br/><br/>
+The rankhospital.R file contains a function that returns the name of the hospital whose 30-day mortality rate equals the rate specified by 'num' for the specified state and outcome. <br/><br/>
+The rankall.R file contains a function that returns returns a two-column data frame with the name of the hospital in each state that has the ranking specified by 'num.'
