@@ -1,38 +1,28 @@
 setwd("~/Google Drive/_Data Science Johns Hopkins/Getting and Cleaning Data/Course Project")
 
-## This script performs the following tasks:
-## 0. Download and unzip files
-## 1. Merge training and test sets to create one dataset
-## 2. Extract only the measurements on the mean and standard deviation 
-## 3. Uses descriptive activity names to name the activities in the data set
-## 4. Confrm dataset uses descriptive variable names
-## 5. Use descriptive activity names to name the activities in the dataset
-
-#### 0. Download and unzip files
+#### 1. Download and unzip files
 fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileURL, destfile="./Dataset.zip")
-unzip(zipfile="./data/Dataset.zip", exdir=".")
+unzip(zipfile="./Dataset.zip", exdir=".")
 
-#### 1. Merge training and test sets to create one dataset
-# library(tidyr)
-# library(readr)
+#### 2. Merge training and test sets to create one dataset
 library(dplyr)
 
 ## Read activity labels containing activity id and activity name pairs
-activity_labels <- tbl_df(read.table("./data/UCI HAR Dataset/activity_labels.txt"))
+activity_labels <- tbl_df(read.table("./UCI HAR Dataset/activity_labels.txt"))
 
 ## Read feature vector containing column names for data
-features <- read.table("./data/UCI HAR Dataset/features.txt")
+features <- read.table("./UCI HAR Dataset/features.txt")
 
 ## Read training files: subjects, labels, and data
-subject_train <- tbl_df(read.table("./data/UCI HAR Dataset/train/subject_train.txt"))
-y_train <- tbl_df(read.table("./data/UCI HAR Dataset/train/y_train.txt"))
-x_train <- tbl_df(read.table("./data/UCI HAR Dataset/train/X_train.txt"))
+subject_train <- tbl_df(read.table("./UCI HAR Dataset/train/subject_train.txt"))
+y_train <- tbl_df(read.table("./UCI HAR Dataset/train/y_train.txt"))
+x_train <- tbl_df(read.table("./UCI HAR Dataset/train/X_train.txt"))
 
 ## Read testing files: subjects, labels, and data
-subject_test <- tbl_df(read.table("./data/UCI HAR Dataset/test/subject_test.txt"))
-y_test <- tbl_df(read.table("./data/UCI HAR Dataset/test/y_test.txt"))
-x_test <- tbl_df(read.table("./data/UCI HAR Dataset/test/X_test.txt"))
+subject_test <- tbl_df(read.table("./UCI HAR Dataset/test/subject_test.txt"))
+y_test <- tbl_df(read.table("./UCI HAR Dataset/test/y_test.txt"))
+x_test <- tbl_df(read.table("./UCI HAR Dataset/test/X_test.txt"))
 
 ## Assign column names
 colnames(subject_test) <- "subjectID"
@@ -56,7 +46,7 @@ all_test <- mutate(all_test, dataset = "test")
 ## Merge training and testing data
 all_data <- bind_rows(all_train, all_test)
 
-#### 2. Extract only the measurements on the mean and standard deviation
+#### 3. Extract only the measurements on the mean and standard deviation
 ## Read column names
 data_columns <- colnames(all_data)
 
@@ -67,18 +57,25 @@ ids_mean_std <- (grepl("subjectID", data_columns) | grepl("activityID", data_col
 ## Use above vector to extract desired measurements from all_data
 mean_std_dataset <- all_data[ , ids_mean_std == TRUE]
 
-#### 3. Use descriptive activity names to name the activities in the dataset
+#### 4. Use descriptive activity names to name the activities in the dataset
 mean_std_dataset <- left_join(mean_std_dataset, activity_labels)
 mean_std_dataset <- select(mean_std_dataset, subjectID, activityType, "tBodyAcc-mean()-X":"fBodyBodyGyroJerkMag-meanFreq()")
 
-#### 4. Confrm dataset uses descriptive variable names 
+#### 5. Confirm dataset uses descriptive variable names 
 mean_std_dataset
 
-#### 5. Create a second, independent tidy data set with the average 
-#### of each variable for each activity and each subject.
+#### 6. Create a second, independent tidy data set with the average 
+#### of each variable for each activity and each subject
 ## Check for NA values
-sum(is.na(grp_mean_std_dataset))
+sum(is.na(mean_std_dataset))
 
 ## Group by activityType and subjectID
-grp_mean_std_dataset <- mean_std_dataset %>% group_by(activityType, subjectID)
-                                            sumamrise_each(funs(mean = mean(., na.rm = TRUE)))
+grp_mean_std_dataset <- mean_std_dataset %>% 
+    group_by(activityType, subjectID) %>%
+    summarise_all(funs(mean = mean(., na.rm = TRUE)))
+
+#### 7. Make Codebook for the datasets
+#### mean_std_dataset and grp_mean_std_dataset
+library(dataMaid)
+makeCodebook(mean_std_dataset)
+makeCodebook(grp_mean_std_dataset)
