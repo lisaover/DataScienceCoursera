@@ -792,7 +792,7 @@ activityType
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-1-activityType-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-1-activityType-1.png)
 
 -   Observed factor levels: "LAYING", "SITTING", "STANDING", "WALKING",
     "WALKING\_DOWNSTAIRS", "WALKING\_UPSTAIRS".
@@ -841,7 +841,7 @@ subjectID
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-2-subjectID-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-2-subjectID-1.png)
 
 ------------------------------------------------------------------------
 
@@ -887,7 +887,7 @@ tBodyAcc-mean()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-3-tBodyAcc-mean()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-3-tBodyAcc-mean()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -933,7 +933,7 @@ tBodyAcc-mean()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-4-tBodyAcc-mean()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-4-tBodyAcc-mean()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -979,7 +979,7 @@ tBodyAcc-mean()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-5-tBodyAcc-mean()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-5-tBodyAcc-mean()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1025,7 +1025,7 @@ tBodyAcc-std()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-6-tBodyAcc-std()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-6-tBodyAcc-std()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1071,7 +1071,7 @@ tBodyAcc-std()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-7-tBodyAcc-std()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-7-tBodyAcc-std()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1117,7 +1117,7 @@ tBodyAcc-std()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-8-tBodyAcc-std()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-8-tBodyAcc-std()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1163,7 +1163,7 @@ tGravityAcc-mean()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-9-tGravityAcc-mean()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-9-tGravityAcc-mean()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1209,7 +1209,7 @@ tGravityAcc-mean()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-10-tGravityAcc-mean()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-10-tGravityAcc-mean()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1255,7 +1255,7 @@ tGravityAcc-mean()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-11-tGravityAcc-mean()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-11-tGravityAcc-mean()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1301,7 +1301,7 @@ tGravityAcc-std()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-12-tGravityAcc-std()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-12-tGravityAcc-std()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1347,7 +1347,7 @@ tGravityAcc-std()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-13-tGravityAcc-std()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-13-tGravityAcc-std()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1393,7 +1393,7 @@ tGravityAcc-std()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-14-tGravityAcc-std()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-14-tGravityAcc-std()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1439,7 +1439,7 @@ tBodyAccJerk-mean()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-15-tBodyAccJerk-mean()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-15-tBodyAccJerk-mean()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1485,7 +1485,7 @@ tBodyAccJerk-mean()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-16-tBodyAccJerk-mean()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-16-tBodyAccJerk-mean()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1531,7 +1531,7 @@ tBodyAccJerk-mean()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-17-tBodyAccJerk-mean()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-17-tBodyAccJerk-mean()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1577,7 +1577,7 @@ tBodyAccJerk-std()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-18-tBodyAccJerk-std()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-18-tBodyAccJerk-std()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1623,7 +1623,7 @@ tBodyAccJerk-std()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-19-tBodyAccJerk-std()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-19-tBodyAccJerk-std()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1669,7 +1669,7 @@ tBodyAccJerk-std()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-20-tBodyAccJerk-std()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-20-tBodyAccJerk-std()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1715,7 +1715,7 @@ tBodyGyro-mean()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-21-tBodyGyro-mean()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-21-tBodyGyro-mean()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1761,7 +1761,7 @@ tBodyGyro-mean()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-22-tBodyGyro-mean()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-22-tBodyGyro-mean()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1807,7 +1807,7 @@ tBodyGyro-mean()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-23-tBodyGyro-mean()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-23-tBodyGyro-mean()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1853,7 +1853,7 @@ tBodyGyro-std()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-24-tBodyGyro-std()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-24-tBodyGyro-std()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1899,7 +1899,7 @@ tBodyGyro-std()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-25-tBodyGyro-std()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-25-tBodyGyro-std()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1945,7 +1945,7 @@ tBodyGyro-std()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-26-tBodyGyro-std()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-26-tBodyGyro-std()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -1991,7 +1991,7 @@ tBodyGyroJerk-mean()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-27-tBodyGyroJerk-mean()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-27-tBodyGyroJerk-mean()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2037,7 +2037,7 @@ tBodyGyroJerk-mean()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-28-tBodyGyroJerk-mean()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-28-tBodyGyroJerk-mean()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2083,7 +2083,7 @@ tBodyGyroJerk-mean()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-29-tBodyGyroJerk-mean()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-29-tBodyGyroJerk-mean()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2129,7 +2129,7 @@ tBodyGyroJerk-std()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-30-tBodyGyroJerk-std()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-30-tBodyGyroJerk-std()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2175,7 +2175,7 @@ tBodyGyroJerk-std()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-31-tBodyGyroJerk-std()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-31-tBodyGyroJerk-std()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2221,7 +2221,7 @@ tBodyGyroJerk-std()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-32-tBodyGyroJerk-std()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-32-tBodyGyroJerk-std()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2267,7 +2267,7 @@ tBodyAccMag-mean()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-33-tBodyAccMag-mean()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-33-tBodyAccMag-mean()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2313,7 +2313,7 @@ tBodyAccMag-std()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-34-tBodyAccMag-std()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-34-tBodyAccMag-std()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2359,7 +2359,7 @@ tGravityAccMag-mean()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-35-tGravityAccMag-mean()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-35-tGravityAccMag-mean()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2405,7 +2405,7 @@ tGravityAccMag-std()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-36-tGravityAccMag-std()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-36-tGravityAccMag-std()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2451,7 +2451,7 @@ tBodyAccJerkMag-mean()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-37-tBodyAccJerkMag-mean()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-37-tBodyAccJerkMag-mean()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2497,7 +2497,7 @@ tBodyAccJerkMag-std()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-38-tBodyAccJerkMag-std()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-38-tBodyAccJerkMag-std()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2543,7 +2543,7 @@ tBodyGyroMag-mean()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-39-tBodyGyroMag-mean()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-39-tBodyGyroMag-mean()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2589,7 +2589,7 @@ tBodyGyroMag-std()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-40-tBodyGyroMag-std()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-40-tBodyGyroMag-std()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2635,7 +2635,7 @@ tBodyGyroJerkMag-mean()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-41-tBodyGyroJerkMag-mean()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-41-tBodyGyroJerkMag-mean()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2681,7 +2681,7 @@ tBodyGyroJerkMag-std()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-42-tBodyGyroJerkMag-std()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-42-tBodyGyroJerkMag-std()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2727,7 +2727,7 @@ fBodyAcc-mean()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-43-fBodyAcc-mean()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-43-fBodyAcc-mean()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2773,7 +2773,7 @@ fBodyAcc-mean()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-44-fBodyAcc-mean()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-44-fBodyAcc-mean()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2819,7 +2819,7 @@ fBodyAcc-mean()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-45-fBodyAcc-mean()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-45-fBodyAcc-mean()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2865,7 +2865,7 @@ fBodyAcc-std()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-46-fBodyAcc-std()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-46-fBodyAcc-std()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2911,7 +2911,7 @@ fBodyAcc-std()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-47-fBodyAcc-std()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-47-fBodyAcc-std()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -2957,7 +2957,7 @@ fBodyAcc-std()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-48-fBodyAcc-std()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-48-fBodyAcc-std()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3003,7 +3003,7 @@ fBodyAcc-meanFreq()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-49-fBodyAcc-meanFreq()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-49-fBodyAcc-meanFreq()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3049,7 +3049,7 @@ fBodyAcc-meanFreq()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-50-fBodyAcc-meanFreq()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-50-fBodyAcc-meanFreq()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3095,7 +3095,7 @@ fBodyAcc-meanFreq()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-51-fBodyAcc-meanFreq()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-51-fBodyAcc-meanFreq()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3141,7 +3141,7 @@ fBodyAccJerk-mean()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-52-fBodyAccJerk-mean()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-52-fBodyAccJerk-mean()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3187,7 +3187,7 @@ fBodyAccJerk-mean()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-53-fBodyAccJerk-mean()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-53-fBodyAccJerk-mean()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3233,7 +3233,7 @@ fBodyAccJerk-mean()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-54-fBodyAccJerk-mean()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-54-fBodyAccJerk-mean()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3279,7 +3279,7 @@ fBodyAccJerk-std()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-55-fBodyAccJerk-std()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-55-fBodyAccJerk-std()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3325,7 +3325,7 @@ fBodyAccJerk-std()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-56-fBodyAccJerk-std()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-56-fBodyAccJerk-std()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3371,7 +3371,7 @@ fBodyAccJerk-std()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-57-fBodyAccJerk-std()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-57-fBodyAccJerk-std()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3417,7 +3417,7 @@ fBodyAccJerk-meanFreq()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-58-fBodyAccJerk-meanFreq()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-58-fBodyAccJerk-meanFreq()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3463,7 +3463,7 @@ fBodyAccJerk-meanFreq()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-59-fBodyAccJerk-meanFreq()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-59-fBodyAccJerk-meanFreq()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3509,7 +3509,7 @@ fBodyAccJerk-meanFreq()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-60-fBodyAccJerk-meanFreq()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-60-fBodyAccJerk-meanFreq()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3555,7 +3555,7 @@ fBodyGyro-mean()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-61-fBodyGyro-mean()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-61-fBodyGyro-mean()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3601,7 +3601,7 @@ fBodyGyro-mean()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-62-fBodyGyro-mean()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-62-fBodyGyro-mean()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3647,7 +3647,7 @@ fBodyGyro-mean()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-63-fBodyGyro-mean()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-63-fBodyGyro-mean()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3693,7 +3693,7 @@ fBodyGyro-std()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-64-fBodyGyro-std()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-64-fBodyGyro-std()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3739,7 +3739,7 @@ fBodyGyro-std()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-65-fBodyGyro-std()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-65-fBodyGyro-std()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3785,7 +3785,7 @@ fBodyGyro-std()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-66-fBodyGyro-std()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-66-fBodyGyro-std()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3831,7 +3831,7 @@ fBodyGyro-meanFreq()-X\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-67-fBodyGyro-meanFreq()-X-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-67-fBodyGyro-meanFreq()-X-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3877,7 +3877,7 @@ fBodyGyro-meanFreq()-Y\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-68-fBodyGyro-meanFreq()-Y-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-68-fBodyGyro-meanFreq()-Y-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3923,7 +3923,7 @@ fBodyGyro-meanFreq()-Z\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-69-fBodyGyro-meanFreq()-Z-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-69-fBodyGyro-meanFreq()-Z-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -3969,7 +3969,7 @@ fBodyAccMag-mean()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-70-fBodyAccMag-mean()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-70-fBodyAccMag-mean()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -4015,7 +4015,7 @@ fBodyAccMag-std()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-71-fBodyAccMag-std()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-71-fBodyAccMag-std()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -4061,7 +4061,7 @@ fBodyAccMag-meanFreq()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-72-fBodyAccMag-meanFreq()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-72-fBodyAccMag-meanFreq()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -4107,7 +4107,7 @@ fBodyBodyAccJerkMag-mean()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-73-fBodyBodyAccJerkMag-mean()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-73-fBodyBodyAccJerkMag-mean()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -4153,7 +4153,7 @@ fBodyBodyAccJerkMag-std()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-74-fBodyBodyAccJerkMag-std()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-74-fBodyBodyAccJerkMag-std()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -4199,7 +4199,7 @@ fBodyBodyAccJerkMag-meanFreq()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-75-fBodyBodyAccJerkMag-meanFreq()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-75-fBodyBodyAccJerkMag-meanFreq()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -4245,7 +4245,7 @@ fBodyBodyGyroMag-mean()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-76-fBodyBodyGyroMag-mean()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-76-fBodyBodyGyroMag-mean()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -4291,7 +4291,7 @@ fBodyBodyGyroMag-std()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-77-fBodyBodyGyroMag-std()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-77-fBodyBodyGyroMag-std()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -4337,7 +4337,7 @@ fBodyBodyGyroMag-meanFreq()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-78-fBodyBodyGyroMag-meanFreq()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-78-fBodyBodyGyroMag-meanFreq()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -4383,7 +4383,7 @@ fBodyBodyGyroJerkMag-mean()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-79-fBodyBodyGyroJerkMag-mean()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-79-fBodyBodyGyroJerkMag-mean()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -4429,7 +4429,7 @@ fBodyBodyGyroJerkMag-std()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-80-fBodyBodyGyroJerkMag-std()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-80-fBodyBodyGyroJerkMag-std()-mean-1.png)
 
 ------------------------------------------------------------------------
 
@@ -4475,7 +4475,7 @@ fBodyBodyGyroJerkMag-meanFreq()\_mean
 </tbody>
 </table>
 
-![](codebook_grp_mean_std_dataset_BKUP_files/figure-markdown_strict/Var-81-fBodyBodyGyroJerkMag-meanFreq()-mean-1.png)
+![](codebook_grp_mean_std_dataset_files/figure-markdown_strict/Var-81-fBodyBodyGyroJerkMag-meanFreq()-mean-1.png)
 
 ------------------------------------------------------------------------
 
