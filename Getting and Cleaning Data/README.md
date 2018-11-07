@@ -18,16 +18,16 @@ WALKING\_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone
 acceleration and 3-axial angular velocity were recorded from the phone's
 embedded accelerometer and gyroscope. The dataset was split into a
 training set (70%) and a testing set (30%). The study data contains
-files with derived or calculated data, and these files are the relevant
-files for this project:
+files with summary estimates (mean, standard deviation, min, max, etc.),
+and these files are the relevant files for this project:
 
 -   The *UCI HAR Dataset* folder contains the following files
 
     -   **features.txt** contains a 561 element vector of features for
-        the derived or calculated data
+        summary estimates of the data
 
     -   **features\_info.txt** contains information about the 561
-        features for the derived or calculated data
+        features
 
     -   **activity\_labels.txt** contains two columns to match activity
         identifiers with activity types
@@ -35,16 +35,16 @@ files for this project:
 -   The *train* and *test* folders within the *UCI HAR Dataset* folder
     contain the training and testing data files, respectively
 
-    -   **X\_train.txt** and **X\_test.txt** contain the derived or
-        calculated data
+    -   **X\_train.txt** and **X\_test.txt** contain the summary
+        estimates data
 
     -   **subject\_train.txt** and **subject\_test.txt** contain subject
         identifiers where each row corresponds to a row in the
-        aggragated data file
+        **X\_train.txt** and **X\_test.txt** data files
 
     -   **y\_train.txt** and **y\_test.txt** contain activity
-        identifiers where each row corresponds to the aggragated data
-        file
+        identifiers where each row corresponds to a row in the
+        **X\_train.txt** and **X\_test.txt** data files
 
 For more information about the study, please see the study README.txt
 file located in the *UCI HAR Dataset* folder. You may also visit UCI's
