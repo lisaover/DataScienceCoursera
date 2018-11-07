@@ -73,12 +73,13 @@ This script performs the following tasks:
 
 3.  Extract only the measurements on the mean and standard deviation
 
-4.  Uses descriptive activity names to name the activities in the data
+4.  Use descriptive activity names to name the activities in the data
     set
 
-5.  Confrm dataset uses descriptive variable names
+5.  Confirm dataset uses descriptive variable names
 
-6.  Use descriptive activity names to name the activities in the dataset
+6.  Create a second, independent tidy data set with the average of each
+    variable for each activity and each subject
 
 ##### 1. Download and unzip files.
 
