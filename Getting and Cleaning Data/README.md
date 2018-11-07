@@ -188,6 +188,6 @@ Codebooks
 
 A codebook was created for each of the resulting datasets:
 
--   codebook\_mean\_std\_dataset.Rmd
+-   codebook\_mean\_std\_dataset.md
 
--   codebook\_grp\_mean\_std\_dataset.Rmd
+-   codebook\_grp\_mean\_std\_dataset.md
