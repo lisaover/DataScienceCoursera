@@ -38,11 +38,12 @@ files for this project:
     -   **X\_train.txt** and **X\_test.txt** contain the derived or
         calculated data
 
-    -   **subject\_train** contains subject identifiers where each row
-        corresponds to a row in the aggragated data file
+    -   **subject\_train** and **subject\_test** contain subject
+        identifiers where each row corresponds to a row in the
+        aggragated data file
 
-    -   **y\_train.txt** contains activity identifiers where each row
-        corresponds to the aggragated data file
+    -   **y\_train.txt** and **y\_test** contain activity identifiers
+        where each row corresponds to the aggragated data file
 
 For more information about the study, please see the study README.txt
 file located in the *UCI HAR Dataset* folder. You may also visit UCI's
