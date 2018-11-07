@@ -4483,7 +4483,7 @@ Report generation information:
 
 -   Created by Lisa Over (username: `lisaover`).
 
--   Report creation time: Wed Nov 07 2018 08:58:51
+-   Report creation time: Wed Nov 07 2018 13:07:57
 
 -   Report was run from directory:
     `/Users/lisaover/Google Drive/_Data Science Johns Hopkins/Getting and Cleaning Data/Course Project`
@@ -4495,4 +4495,4 @@ Report generation information:
 -   Platform: x86\_64-apple-darwin15.6.0 (64-bit)(macOS 10.14).
 
 -   Function call:
-    `makeDataReport(data = grp_mean_std_dataset, mode = c("summarize",  "visualize", "check"), smartNum = FALSE, file = "codebook_grp_mean_std_dataset.Rmd",  replace = TRUE, checks = list(character = "showAllFactorLevels",      factor = "showAllFactorLevels", labelled = "showAllFactorLevels",      haven_labelled = "showAllFactorLevels", numeric = NULL,      integer = NULL, logical = NULL, Date = NULL), listChecks = FALSE,  maxProbVals = Inf, codebook = TRUE, reportTitle = "Codebook for grp_mean_std_dataset")`
+    `makeDataReport(data = grp_mean_std_dataset, mode = c("summarize",  "visualize", "check"), smartNum = FALSE, file = "codebook_grp_mean_std_dataset.Rmd",  checks = list(character = "showAllFactorLevels", factor = "showAllFactorLevels",      labelled = "showAllFactorLevels", haven_labelled = "showAllFactorLevels",      numeric = NULL, integer = NULL, logical = NULL, Date = NULL),  listChecks = FALSE, maxProbVals = Inf, codebook = TRUE, reportTitle = "Codebook for grp_mean_std_dataset")`

@@ -4476,7 +4476,7 @@ Report generation information:
 
 -   Created by Lisa Over (username: `lisaover`).
 
--   Report creation time: Wed Nov 07 2018 12:14:25
+-   Report creation time: Wed Nov 07 2018 13:07:12
 
 -   Report was run from directory:
     `/Users/lisaover/Google Drive/_Data Science Johns Hopkins/Getting and Cleaning Data/Course Project`
