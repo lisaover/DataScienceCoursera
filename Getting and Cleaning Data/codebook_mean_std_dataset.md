@@ -115,7 +115,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10292</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body acceleration in the X direction</td>
+<td align="left">Time domain mean body acceleration in the X direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -123,7 +123,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body acceleration in the Y direction</td>
+<td align="left">Time domain mean body acceleration in the Y direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -131,7 +131,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10293</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body acceleration in the Z direction</td>
+<td align="left">Time domain mean body acceleration in the Z direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -139,7 +139,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10295</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain body acceleration std dev in the X direction</td>
+<td align="left">Time domain body acceleration std dev in the X direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -147,7 +147,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10297</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain body acceleration std dev in the Y direction</td>
+<td align="left">Time domain body acceleration std dev in the Y direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -155,7 +155,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10297</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain body acceleration std dev in the Z direction</td>
+<td align="left">Time domain body acceleration std dev in the Z direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -163,7 +163,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean gravity acceleration in the X direction</td>
+<td align="left">Time domain mean gravity acceleration in the X direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -171,7 +171,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10298</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean gravity acceleration in the Y direction</td>
+<td align="left">Time domain mean gravity acceleration in the Y direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -179,7 +179,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean gravity acceleration in the Z direction</td>
+<td align="left">Time domain mean gravity acceleration in the Z direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -187,7 +187,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10288</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev gravity acceleration in the X direction</td>
+<td align="left">Time domain std dev gravity acceleration in the X direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -195,7 +195,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10293</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev gravity acceleration in the Y direction</td>
+<td align="left">Time domain std dev gravity acceleration in the Y direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -203,7 +203,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev gravity acceleration in the Z direction</td>
+<td align="left">Time domain std dev gravity acceleration in the Z direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -211,7 +211,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body acceleration jerk signal in the X direction</td>
+<td align="left">Time domain mean body acceleration jerk signal in the X direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -219,7 +219,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body acceleration jerk signal in the Y direction</td>
+<td align="left">Time domain mean body acceleration jerk signal in the Y direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -227,7 +227,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body acceleration jerk signal in the Z direction</td>
+<td align="left">Time domain mean body acceleration jerk signal in the Z direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -235,7 +235,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10290</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body acceleration jerk signal in the X direction</td>
+<td align="left">Time domain std dev body acceleration jerk signal in the X direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -243,7 +243,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body acceleration jerk signal in the Y direction</td>
+<td align="left">Time domain std dev body acceleration jerk signal in the Y direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -251,7 +251,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10293</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body acceleration jerk signal in the Z direction</td>
+<td align="left">Time domain std dev body acceleration jerk signal in the Z direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -259,7 +259,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10298</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body angular velocity in the X direction</td>
+<td align="left">Time domain mean body angular velocity in the X direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -267,7 +267,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body angular velocity in the Y direction</td>
+<td align="left">Time domain mean body angular velocity in the Y direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -275,7 +275,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10297</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body angular velocity in the Z direction</td>
+<td align="left">Time domain mean body angular velocity in the Z direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -283,7 +283,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10292</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body angular velocity in the X direction</td>
+<td align="left">Time domain std dev body angular velocity in the X direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -291,7 +291,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body angular velocity in the Y direction</td>
+<td align="left">Time domain std dev body angular velocity in the Y direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -299,7 +299,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body angular velocity in the Z direction</td>
+<td align="left">Time domain std dev body angular velocity in the Z direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -307,7 +307,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10295</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body angular velocity jerk signal in the X direction</td>
+<td align="left">Time domain mean body angular velocity jerk signal in the X direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -315,7 +315,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body angular velocity jerk signal in the Y direction</td>
+<td align="left">Time domain mean body angular velocity jerk signal in the Y direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -323,7 +323,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10298</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body angular velocity jerk signal in the Z direction</td>
+<td align="left">Time domain mean body angular velocity jerk signal in the Z direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -331,7 +331,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10292</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body angular velocity jerk signal in the X direction</td>
+<td align="left">Time domain std dev body angular velocity jerk signal in the X direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -339,7 +339,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10295</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body angular velocity jerk signal in the Y direction</td>
+<td align="left">Time domain std dev body angular velocity jerk signal in the Y direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -347,7 +347,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10291</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body angular velocity jerk signal in the Z direction</td>
+<td align="left">Time domain std dev body angular velocity jerk signal in the Z direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -355,7 +355,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body acceleration magnitude</td>
+<td align="left">Time domain mean body acceleration magnitude</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -363,7 +363,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10294</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body acceleration magnitude</td>
+<td align="left">Time domain std dev body acceleration magnitude</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -371,7 +371,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean gravity acceleration magnitude</td>
+<td align="left">Time domain mean gravity acceleration magnitude</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -379,7 +379,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10294</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev gravity acceleration magnitude</td>
+<td align="left">Time domain std dev gravity acceleration magnitude</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -387,7 +387,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10292</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body acceleration jerk signal magnitude</td>
+<td align="left">Time domain mean body acceleration jerk signal magnitude</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -395,7 +395,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10294</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body acceleration jerk signal magnitude</td>
+<td align="left">Time domain std dev body acceleration jerk signal magnitude</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -403,7 +403,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10298</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body angular velocity magnitude</td>
+<td align="left">Time domain mean body angular velocity magnitude</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -411,7 +411,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10298</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body angular velocity magnitude</td>
+<td align="left">Time domain std dev body angular velocity magnitude</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -419,7 +419,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10293</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain mean body angular velocity jerk signal magnitude</td>
+<td align="left">Time domain mean body angular velocity jerk signal magnitude</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -427,7 +427,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10297</td>
 <td align="center">0.00 %</td>
-<td align="left">time domain std dev body angular velocity jerk signal magnitude</td>
+<td align="left">Time domain std dev body angular velocity jerk signal magnitude</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -435,7 +435,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10295</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration in the X direction</td>
+<td align="left">Freq domain mean body acceleration in the X direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -443,7 +443,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10292</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration in the Y direction</td>
+<td align="left">Freq domain mean body acceleration in the Y direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -451,7 +451,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10295</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration in the Z direction</td>
+<td align="left">Freq domain mean body acceleration in the Z direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -459,7 +459,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10294</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body acceleration in the X direction</td>
+<td align="left">Freq domain std dev body acceleration in the X direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -467,7 +467,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10297</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body acceleration in the Y direction</td>
+<td align="left">Freq domain std dev body acceleration in the Y direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -475,7 +475,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body acceleration in the Z direction</td>
+<td align="left">Freq domain std dev body acceleration in the Z direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -483,7 +483,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration frequency in the X direction</td>
+<td align="left">Freq domain mean body acceleration frequency in the X direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -491,7 +491,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration frequency in the Y direction</td>
+<td align="left">Freq domain mean body acceleration frequency in the Y direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -499,7 +499,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration frequency in the Z direction</td>
+<td align="left">Freq domain mean body acceleration frequency in the Z direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -507,7 +507,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10293</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration jerk signal in the X direction</td>
+<td align="left">Freq domain mean body acceleration jerk signal in the X direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -515,7 +515,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration jerk signal in the Y direction</td>
+<td align="left">Freq domain mean body acceleration jerk signal in the Y direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -523,7 +523,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10294</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration jerk signal in the Z direction</td>
+<td align="left">Freq domain mean body acceleration jerk signal in the Z direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -531,7 +531,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10291</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body acceleration jerk signal in the X direction</td>
+<td align="left">Freq domain std dev body acceleration jerk signal in the X direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -539,7 +539,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10294</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body acceleration jerk signal in the Y direction</td>
+<td align="left">Freq domain std dev body acceleration jerk signal in the Y direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -547,7 +547,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10290</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body acceleration jerk signal in the Z direction</td>
+<td align="left">Freq domain std dev body acceleration jerk signal in the Z direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -555,7 +555,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10298</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration frequency jerk signal in the X direction</td>
+<td align="left">Freq domain mean body acceleration frequency jerk signal in the X direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -563,7 +563,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration frequency jerk signal in the Y direction</td>
+<td align="left">Freq domain mean body acceleration frequency jerk signal in the Y direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -571,7 +571,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10298</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration frequency jerk signal in the Z direction</td>
+<td align="left">Freq domain mean body acceleration frequency jerk signal in the Z direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -579,7 +579,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10297</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body angular velocity in the X direction</td>
+<td align="left">Freq domain mean body angular velocity in the X direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -587,7 +587,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body angular velocity in the Y direction</td>
+<td align="left">Freq domain mean body angular velocity in the Y direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -595,7 +595,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10297</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body angular velocity in the Z direction</td>
+<td align="left">Freq domain mean body angular velocity in the Z direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -603,7 +603,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10297</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body angular velocity in the X direction</td>
+<td align="left">Freq domain std dev body angular velocity in the X direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -611,7 +611,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10293</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body angular velocity in the Y direction</td>
+<td align="left">Freq domain std dev body angular velocity in the Y direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -619,7 +619,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10295</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body angular velocity in the Z direction</td>
+<td align="left">Freq domain std dev body angular velocity in the Z direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -627,7 +627,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10298</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body angular velocity frequency in the X direction</td>
+<td align="left">Freq domain mean body angular velocity frequency in the X direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -635,7 +635,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body angular velocity frequency in the Y direction</td>
+<td align="left">Freq domain mean body angular velocity frequency in the Y direction</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -643,7 +643,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body angular velocity frequency in the Z direction</td>
+<td align="left">Freq domain mean body angular velocity frequency in the Z direction</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -651,7 +651,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration magnitude</td>
+<td align="left">Freq domain mean body acceleration magnitude</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -659,7 +659,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10298</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body acceleration magnitude</td>
+<td align="left">Freq domain std dev body acceleration magnitude</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -667,7 +667,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration frequency magnitude</td>
+<td align="left">Freq domain mean body acceleration frequency magnitude</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -675,7 +675,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10290</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration jerk signal magnitude</td>
+<td align="left">Freq domain mean body acceleration jerk signal magnitude</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -683,7 +683,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body acceleration jerk signal magnitude</td>
+<td align="left">Freq domain std dev body acceleration jerk signal magnitude</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -691,7 +691,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body acceleration frequency jerk signal magnitude</td>
+<td align="left">Freq domain mean body acceleration frequency jerk signal magnitude</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -699,7 +699,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10297</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body angular velocity magnitude</td>
+<td align="left">Freq domain mean body angular velocity magnitude</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -707,7 +707,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10296</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body angular velocity magnitude</td>
+<td align="left">Freq domain std dev body angular velocity magnitude</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -715,7 +715,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body angular velocity frequency magnitude</td>
+<td align="left">Freq domain mean body angular velocity frequency magnitude</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -723,7 +723,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10293</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body angular velocity jerk signal magnitude</td>
+<td align="left">Freq domain mean body angular velocity jerk signal magnitude</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -731,7 +731,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10292</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain std dev body angular velocity jerk signal magnitude</td>
+<td align="left">Freq domain std dev body angular velocity jerk signal magnitude</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -739,7 +739,7 @@ Codebook summary table
 <td align="left">numeric</td>
 <td align="right">10299</td>
 <td align="center">0.00 %</td>
-<td align="left">freq domain mean body angular velocity frequency jerk signal magnitude</td>
+<td align="left">Freq domain mean body angular velocity frequency jerk signal magnitude</td>
 </tr>
 </tbody>
 </table>
