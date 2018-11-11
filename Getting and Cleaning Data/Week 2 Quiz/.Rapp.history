@@ -1,0 +1,1783 @@
+mod = lm(advEng ~ mean + median + mean*median)#
+i=1#
+title = "Percent Advanced English Interaction Model"#
+modCode = "adv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i, length(allegheny$School_Number))
+mod = lm(advEng ~ mean + median + mean*median)#
+i=1#
+title = "Percent Advanced English Interaction Model"#
+modCode = "adv-eng-int"#
+printPDF(mod, title, modCode)#
+observations = length(allegheny$School_Number)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i, observations)
+storeInteractionSummary <- function(summInteraction, mod, i, observations) {#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]  + 	anova(mod)$'Df'[4]#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["mean","Estimate"]#
+	pBeta1 = coef(summary(mod))["mean","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["median","Estimate"]#
+	pBeta2 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta3 = coef(summary(mod))["mean:median","Estimate"]#
+	pBeta3 = coef(summary(mod))["mean:median","Pr(>|t|)"]#
+#
+	summInteraction[1,i] = observations#
+	summInteraction[2,i] = obsInMod#
+	summInteraction[3,i] = rSquared#
+	summInteraction[4,i] = pVal#
+	summInteraction[5,i] = beta0#
+	summInteraction[6,i] = pBeta0#
+	summInteraction[7,i] = beta1#
+	summInteraction[8,i] = pBeta1#
+	summInteraction[9,i] = beta2#
+	summInteraction[10,i] = pBeta2#
+	summInteraction[11,i] = beta3#
+	summInteraction[12,i] = pBeta3#
+	return(summInteraction)#
+}
+mod = lm(advEng ~ mean + median + mean*median)#
+i=1#
+title = "Percent Advanced English Interaction Model"#
+modCode = "adv-eng-int"#
+printPDF(mod, title, modCode)#
+observations = length(allegheny$School_Number)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i, observations)
+mean = allegheny[["MultipleZipEst_Mean"]]/10000#
+median = allegheny[["MultipleZipEst_Median"]]/10000#
+advEng = allegheny[["Percent_Advanced_English"]]#
+profEng = allegheny[["Percent_Proficient_English"]]#
+advProfEng = advEng + profEng#
+advMath = allegheny[["Percent_Advanced_Math"]]#
+profMath = allegheny[["Percent_Proficient_Math"]]#
+advProfMath = advMath + profMath#
+#
+#Called for each model, this function prints two plots as pdf files: Residual Plot and Normal Quantile Plot. It receives the model results, title for the main title of the graphs, and a model code for the filename. #
+printPDF <- function(mod, title, modCode) {#
+	#create the filename and main title for the residual plot#
+	filename = paste("res_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Residual Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+    #For the given model (mod), plot the fitted vs. residuals#
+  	plot(fitted(mod), residuals(mod), ylab="Residuals", xlab="Fitted", 		    	main=title)#
+   dev.off()#
+	#create the filename and main title for the normal quantile plot#
+	filename = paste("qq_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Normal Quantile Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+   #For the given model (mod), plot the theoretical vs. actual residuals#
+	m = mean(residuals(mod))#
+	s = sd(residuals(mod))#
+	n = length(residuals(mod))#
+	y = rnorm(n, mean=m, sd=s)#
+	qqplot(residuals(mod),y, ylab="Theoretical Residuals", xlab="Actual Residuals", 	main=title)#
+   dev.off()#
+}#
+#
+#Called for each interaction model, this function adds the model results to the ith column of the summInteraction matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeInteractionSummary <- function(summInteraction, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]  + 	anova(mod)$'Df'[4]#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["mean","Estimate"]#
+	pBeta1 = coef(summary(mod))["mean","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["median","Estimate"]#
+	pBeta2 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta3 = coef(summary(mod))["mean:median","Estimate"]#
+	pBeta3 = coef(summary(mod))["mean:median","Pr(>|t|)"]#
+#
+	summInteraction[1,i] = observations#
+	summInteraction[2,i] = obsInMod#
+	summInteraction[3,i] = rSquared#
+	summInteraction[4,i] = pVal#
+	summInteraction[5,i] = beta0#
+	summInteraction[6,i] = pBeta0#
+	summInteraction[7,i] = beta1#
+	summInteraction[8,i] = pBeta1#
+	summInteraction[9,i] = beta2#
+	summInteraction[10,i] = pBeta2#
+	summInteraction[11,i] = beta3#
+	summInteraction[12,i] = pBeta3#
+	return(summInteraction)#
+}#
+#
+#Called for each median^2 model, this function adds the model results to the ith column of the summMedian matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeMedianSummary <- function(summMedian, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["median","Estimate"]#
+	pBeta1 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["I(median^2)","Estimate"]#
+	pBeta2 = coef(summary(mod))["I(median^2)","Pr(>|t|)"]#
+#
+	summMedian[1,i] = observations#
+	summMedian[2,i] = obsInMod#
+	summMedian[3,i] = rSquared#
+	summMedian[4,i] = pVal#
+	summMedian[5,i] = beta0#
+	summMedian[6,i] = pBeta0#
+	summMedian[7,i] = beta1#
+	summMedian[8,i] = pBeta1#
+	summMedian[9,i] = beta2#
+	summMedian[10,i] = pBeta2#
+	return(summMedian)#
+}#
+#
+############## MEAN + MEDIAN + MEAN*MEDIAN #################
+#
+#Initialize the summInteraction matrix for holding interaction model summary results and add row and column names.#
+summInteraction <- matrix(nrow=12, ncol=5)#
+rownames(summInteraction) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "mean coeff", "prob coeff mean", "median coeff", "prob coeff median", "mean*median coeff", "prob coeff mean*median")#
+colnames(summInteraction) = c("PercentAdvancedEnglish_INTERACT", "AtLeastProficientEnglish_INTERACT", "PercentAdvancedMath_INTERACT", "AtLeastProficientMath_INTERACT", "SPP_HS_INTERACT")#
+#
+#interaction model for advanced English#
+mod = lm(advEng ~ mean + median + mean*median)#
+i=1#
+title = "Percent Advanced English Interaction Model"#
+modCode = "adv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)
+mod = lm(advProfEng ~ mean + median + mean*median)#
+i=2#
+title = "Percent Proficient or Advanced English Interaction Model"#
+modCode = "profadv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for advanced math#
+mod = lm(advMath ~ mean + median + mean*median)#
+i=3#
+title = "Percent Advanced Math Interaction Model"#
+modCode = "adv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for proficient or advanced math#
+mod = lm(advProfMath ~ mean + median + mean*median)#
+i=4#
+title = "Percent Proficient or Advanced Math Interaction Model"#
+modCode = "profadv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)
+summMedian <- matrix(nrow=10, ncol=5)#
+rownames(summMedian) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "median coeff", "prob coeff median", "median^2 coeff", "prob coeff median^2")#
+colnames(summMedian) = c("PercentAdvancedEnglish_MEDIAN", "AtLeastProficientEnglish_MEDIAN", "PercentAdvancedMath_MEDIAN", "AtLeastProficientMath_MEDIAN", "SPP_HS_MEDIAN")#
+#
+#median^2 model for advanced English#
+mod = lm(advEng ~ median + I(median^2))#
+i=1#
+title = "Percent Advanced English Median Model"#
+modCode = "adv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfEng ~ median + I(median^2))#
+i=2#
+title = "Percent Proficient or Advanced English Median Model"#
+modCode = "profadv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advMath ~ median + I(median^2))#
+i=3#
+title = "Percent Advanced Math Median Model"#
+modCode = "adv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfMath ~ median + I(median^2))#
+i=4#
+title = "Percent Proficient or Advanced Math Median Model"#
+modCode = "profadv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)
+mean = allegheny.hs[["MultipleZipEst_Mean"]]/10000#
+median = allegheny.hs[["MultipleZipEst_Median"]]/10000#
+score = allegheny.hs[["Score_2014_15"]]#
+#
+#interaction model for HS SPP#
+mod = lm(score ~ mean + median + mean*median)#
+i=5#
+title = "High School SPP Interaction Model"#
+modCode = "hs-spp-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)
+mod = lm(score ~ median + I(median^2))#
+i=5#
+title = "High School SPP Median Model"#
+modCode = "hs-spp-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)
+write.csv(summInteraction, file = "interaction.csv", na="")#
+#
+#write median^2 model summary results to a .csv file#
+write.csv(summMedian, file = "median.csv", na="")
+storeInteractionSummary <- function(summInteraction, mod, i) {#
+	if(i < 5) {#
+		observations = length(allegheny$School_Number)#
+	}#
+	else observations = length(allegheny.hs$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]  + 	anova(mod)$'Df'[4]#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["mean","Estimate"]#
+	pBeta1 = coef(summary(mod))["mean","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["median","Estimate"]#
+	pBeta2 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta3 = coef(summary(mod))["mean:median","Estimate"]#
+	pBeta3 = coef(summary(mod))["mean:median","Pr(>|t|)"]#
+#
+	summInteraction[1,i] = observations#
+	summInteraction[2,i] = obsInMod#
+	summInteraction[3,i] = rSquared#
+	summInteraction[4,i] = pVal#
+	summInteraction[5,i] = beta0#
+	summInteraction[6,i] = pBeta0#
+	summInteraction[7,i] = beta1#
+	summInteraction[8,i] = pBeta1#
+	summInteraction[9,i] = beta2#
+	summInteraction[10,i] = pBeta2#
+	summInteraction[11,i] = beta3#
+	summInteraction[12,i] = pBeta3#
+	return(summInteraction)#
+}#
+#
+#Called for each median^2 model, this function adds the model results to the ith column of the summMedian matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeMedianSummary <- function(summMedian, mod, i) {#
+	if(i < 5) {#
+		observations = length(allegheny$School_Number)#
+	}#
+	else observations = length(allegheny.hs$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["median","Estimate"]#
+	pBeta1 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["I(median^2)","Estimate"]#
+	pBeta2 = coef(summary(mod))["I(median^2)","Pr(>|t|)"]#
+#
+	summMedian[1,i] = observations#
+	summMedian[2,i] = obsInMod#
+	summMedian[3,i] = rSquared#
+	summMedian[4,i] = pVal#
+	summMedian[5,i] = beta0#
+	summMedian[6,i] = pBeta0#
+	summMedian[7,i] = beta1#
+	summMedian[8,i] = pBeta1#
+	summMedian[9,i] = beta2#
+	summMedian[10,i] = pBeta2#
+	return(summMedian)#
+}
+mod = lm(advEng ~ mean + median + mean*median)#
+i=1#
+title = "Percent Advanced English Interaction Model"#
+modCode = "adv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)
+mean = allegheny[["MultipleZipEst_Mean"]]/10000#
+median = allegheny[["MultipleZipEst_Median"]]/10000#
+advEng = allegheny[["Percent_Advanced_English"]]#
+profEng = allegheny[["Percent_Proficient_English"]]#
+advProfEng = advEng + profEng#
+advMath = allegheny[["Percent_Advanced_Math"]]#
+profMath = allegheny[["Percent_Proficient_Math"]]#
+advProfMath = advMath + profMath#
+#
+#Called for each model, this function prints two plots as pdf files: Residual Plot and Normal Quantile Plot. It receives the model results, title for the main title of the graphs, and a model code for the filename. #
+printPDF <- function(mod, title, modCode) {#
+	#create the filename and main title for the residual plot#
+	filename = paste("res_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Residual Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+    #For the given model (mod), plot the fitted vs. residuals#
+  	plot(fitted(mod), residuals(mod), ylab="Residuals", xlab="Fitted", 		    	main=title)#
+   dev.off()#
+	#create the filename and main title for the normal quantile plot#
+	filename = paste("qq_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Normal Quantile Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+   #For the given model (mod), plot the theoretical vs. actual residuals#
+	m = mean(residuals(mod))#
+	s = sd(residuals(mod))#
+	n = length(residuals(mod))#
+	y = rnorm(n, mean=m, sd=s)#
+	qqplot(residuals(mod),y, ylab="Theoretical Residuals", xlab="Actual Residuals", 	main=title)#
+   dev.off()#
+}#
+#
+#Called for each interaction model, this function adds the model results to the ith column of the summInteraction matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeInteractionSummary <- function(summInteraction, mod, i) {#
+	if(i < 5) {#
+		observations = length(allegheny$School_Number)#
+	}#
+	else observations = length(allegheny.hs$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]  + 	anova(mod)$'Df'[4]#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["mean","Estimate"]#
+	pBeta1 = coef(summary(mod))["mean","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["median","Estimate"]#
+	pBeta2 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta3 = coef(summary(mod))["mean:median","Estimate"]#
+	pBeta3 = coef(summary(mod))["mean:median","Pr(>|t|)"]#
+#
+	summInteraction[1,i] = observations#
+	summInteraction[2,i] = obsInMod#
+	summInteraction[3,i] = rSquared#
+	summInteraction[4,i] = pVal#
+	summInteraction[5,i] = beta0#
+	summInteraction[6,i] = pBeta0#
+	summInteraction[7,i] = beta1#
+	summInteraction[8,i] = pBeta1#
+	summInteraction[9,i] = beta2#
+	summInteraction[10,i] = pBeta2#
+	summInteraction[11,i] = beta3#
+	summInteraction[12,i] = pBeta3#
+	return(summInteraction)#
+}#
+#
+#Called for each median^2 model, this function adds the model results to the ith column of the summMedian matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeMedianSummary <- function(summMedian, mod, i) {#
+	if(i < 5) {#
+		observations = length(allegheny$School_Number)#
+	}#
+	else observations = length(allegheny.hs$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["median","Estimate"]#
+	pBeta1 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["I(median^2)","Estimate"]#
+	pBeta2 = coef(summary(mod))["I(median^2)","Pr(>|t|)"]#
+#
+	summMedian[1,i] = observations#
+	summMedian[2,i] = obsInMod#
+	summMedian[3,i] = rSquared#
+	summMedian[4,i] = pVal#
+	summMedian[5,i] = beta0#
+	summMedian[6,i] = pBeta0#
+	summMedian[7,i] = beta1#
+	summMedian[8,i] = pBeta1#
+	summMedian[9,i] = beta2#
+	summMedian[10,i] = pBeta2#
+	return(summMedian)#
+}#
+#
+############## MEAN + MEDIAN + MEAN*MEDIAN #################
+#
+#Initialize the summInteraction matrix for holding interaction model summary results and add row and column names.#
+summInteraction <- matrix(nrow=12, ncol=5)#
+rownames(summInteraction) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "mean coeff", "prob coeff mean", "median coeff", "prob coeff median", "mean*median coeff", "prob coeff mean*median")#
+colnames(summInteraction) = c("PercentAdvancedEnglish_INTERACT", "AtLeastProficientEnglish_INTERACT", "PercentAdvancedMath_INTERACT", "AtLeastProficientMath_INTERACT", "SPP_HS_INTERACT")#
+#
+#interaction model for advanced English#
+mod = lm(advEng ~ mean + median + mean*median)#
+i=1#
+title = "Percent Advanced English Interaction Model"#
+modCode = "adv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for proficient or advanced English#
+mod = lm(advProfEng ~ mean + median + mean*median)#
+i=2#
+title = "Percent Proficient or Advanced English Interaction Model"#
+modCode = "profadv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for advanced math#
+mod = lm(advMath ~ mean + median + mean*median)#
+i=3#
+title = "Percent Advanced Math Interaction Model"#
+modCode = "adv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for proficient or advanced math#
+mod = lm(advProfMath ~ mean + median + mean*median)#
+i=4#
+title = "Percent Proficient or Advanced Math Interaction Model"#
+modCode = "profadv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)
+summMedian <- matrix(nrow=10, ncol=5)#
+rownames(summMedian) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "median coeff", "prob coeff median", "median^2 coeff", "prob coeff median^2")#
+colnames(summMedian) = c("PercentAdvancedEnglish_MEDIAN", "AtLeastProficientEnglish_MEDIAN", "PercentAdvancedMath_MEDIAN", "AtLeastProficientMath_MEDIAN", "SPP_HS_MEDIAN")#
+#
+#median^2 model for advanced English#
+mod = lm(advEng ~ median + I(median^2))#
+i=1#
+title = "Percent Advanced English Median Model"#
+modCode = "adv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfEng ~ median + I(median^2))#
+i=2#
+title = "Percent Proficient or Advanced English Median Model"#
+modCode = "profadv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advMath ~ median + I(median^2))#
+i=3#
+title = "Percent Advanced Math Median Model"#
+modCode = "adv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfMath ~ median + I(median^2))#
+i=4#
+title = "Percent Proficient or Advanced Math Median Model"#
+modCode = "profadv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)
+mean = allegheny.hs[["MultipleZipEst_Mean"]]/10000#
+median = allegheny.hs[["MultipleZipEst_Median"]]/10000#
+score = allegheny.hs[["Score_2014_15"]]#
+#
+#interaction model for HS SPP#
+mod = lm(score ~ mean + median + mean*median)#
+i=5#
+title = "High School SPP Interaction Model"#
+modCode = "hs-spp-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#median model for HS SPP#
+mod = lm(score ~ median + I(median^2))#
+i=5#
+title = "High School SPP Median Model"#
+modCode = "hs-spp-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)
+write.csv(summInteraction, file = "interaction.csv", na="")#
+#
+#write median^2 model summary results to a .csv file#
+write.csv(summMedian, file = "median.csv", na="")
+mod = lm(score ~ mean + median + mean*median)#
+i=5#
+title = "High School SPP Interaction Model"#
+modCode = "hs-spp-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)
+mod
+summary(mod)
+anova(mod)
+allegheny.hs
+allegheny
+nrows <- complete.cases(advEng)
+nrows
+sum(nrows)
+nrows <- complete.cases(advEng)#
+nrows = as.numeric(nrows)
+nrows
+sum(nrows)
+allegheny = read.csv(file.choose(), header=T, sep=",")
+attach(allegheny)
+colnames(allegheny)
+printPDF <- function(mod, title, modCode) {#
+	#create the filename and main title for the residual plot#
+	filename = paste("res_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Residual Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+    #For the given model (mod), plot the fitted vs. residuals#
+  	plot(fitted(mod), residuals(mod), ylab="Residuals", xlab="Fitted", 		    	main=title)#
+   dev.off()#
+	#create the filename and main title for the normal quantile plot#
+	filename = paste("qq_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Normal Quantile Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+   #For the given model (mod), plot the theoretical vs. actual residuals#
+	m = mean(residuals(mod))#
+	s = sd(residuals(mod))#
+	n = length(residuals(mod))#
+	y = rnorm(n, mean=m, sd=s)#
+	qqplot(residuals(mod),y, ylab="Theoretical Residuals", xlab="Actual Residuals", 	main=title)#
+   dev.off()#
+}#
+#
+#Called for each interaction model, this function adds the model results to the ith column of the summInteraction matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeInteractionSummary <- function(summInteraction, mod, i) {#
+	if(i < 5) {#
+		observations = length(allegheny$School_Number)#
+	}#
+	else observations = length(allegheny.hs$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]  + 	anova(mod)$'Df'[4] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["mean","Estimate"]#
+	pBeta1 = coef(summary(mod))["mean","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["median","Estimate"]#
+	pBeta2 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta3 = coef(summary(mod))["mean:median","Estimate"]#
+	pBeta3 = coef(summary(mod))["mean:median","Pr(>|t|)"]#
+#
+	summInteraction[1,i] = observations#
+	summInteraction[2,i] = obsInMod#
+	summInteraction[3,i] = rSquared#
+	summInteraction[4,i] = pVal#
+	summInteraction[5,i] = beta0#
+	summInteraction[6,i] = pBeta0#
+	summInteraction[7,i] = beta1#
+	summInteraction[8,i] = pBeta1#
+	summInteraction[9,i] = beta2#
+	summInteraction[10,i] = pBeta2#
+	summInteraction[11,i] = beta3#
+	summInteraction[12,i] = pBeta3#
+	return(summInteraction)#
+}#
+#
+#Called for each median^2 model, this function adds the model results to the ith column of the summMedian matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeMedianSummary <- function(summMedian, mod, i) {#
+	if(i < 5) {#
+		observations = length(allegheny$School_Number)#
+	}#
+	else observations = length(allegheny.hs$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["median","Estimate"]#
+	pBeta1 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["I(median^2)","Estimate"]#
+	pBeta2 = coef(summary(mod))["I(median^2)","Pr(>|t|)"]#
+#
+	summMedian[1,i] = observations#
+	summMedian[2,i] = obsInMod#
+	summMedian[3,i] = rSquared#
+	summMedian[4,i] = pVal#
+	summMedian[5,i] = beta0#
+	summMedian[6,i] = pBeta0#
+	summMedian[7,i] = beta1#
+	summMedian[8,i] = pBeta1#
+	summMedian[9,i] = beta2#
+	summMedian[10,i] = pBeta2#
+	return(summMedian)#
+}#
+#
+#################################
+### K-8 PSSA DATA REGRESSION
+mean = allegheny[["MultipleZipEst_Mean"]]/10000#
+median = allegheny[["MultipleZipEst_Median"]]/10000#
+advEng = allegheny[["Percent_Advanced_English"]]#
+profEng = allegheny[["Percent_Proficient_English"]]#
+advProfEng = advEng + profEng#
+advMath = allegheny[["Percent_Advanced_Math"]]#
+profMath = allegheny[["Percent_Proficient_Math"]]#
+advProfMath = advMath + profMath#
+#
+#nrows <- complete.cases(advEng)#
+#nrows = as.numeric(nrows)#
+#sum(nrows)#
+#complete observations = 203#
+#
+############## MEAN + MEDIAN + MEAN*MEDIAN #################
+#
+#Initialize the summInteraction matrix for holding interaction model summary results and add row and column names.#
+summInteraction <- matrix(nrow=12, ncol=5)#
+rownames(summInteraction) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "mean coeff", "prob coeff mean", "median coeff", "prob coeff median", "mean*median coeff", "prob coeff mean*median")#
+colnames(summInteraction) = c("PercentAdvancedEnglish_INTERACT", "AtLeastProficientEnglish_INTERACT", "PercentAdvancedMath_INTERACT", "AtLeastProficientMath_INTERACT", "SPP_HS_INTERACT")#
+#
+#interaction model for advanced English#
+mod = lm(advEng ~ mean + median + mean*median)#
+i=1#
+title = "Percent Advanced English Interaction Model"#
+modCode = "adv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for proficient or advanced English#
+mod = lm(advProfEng ~ mean + median + mean*median)#
+i=2#
+title = "Percent Proficient or Advanced English Interaction Model"#
+modCode = "profadv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for advanced math#
+mod = lm(advMath ~ mean + median + mean*median)#
+i=3#
+title = "Percent Advanced Math Interaction Model"#
+modCode = "adv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for proficient or advanced math#
+mod = lm(advProfMath ~ mean + median + mean*median)#
+i=4#
+title = "Percent Proficient or Advanced Math Interaction Model"#
+modCode = "profadv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+############## MEDIAN + MEDIAN^2 #################
+#
+#Initialize the summModel matrix for holding median^2 model summary results and add row and column names.#
+summMedian <- matrix(nrow=10, ncol=5)#
+rownames(summMedian) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "median coeff", "prob coeff median", "median^2 coeff", "prob coeff median^2")#
+colnames(summMedian) = c("PercentAdvancedEnglish_MEDIAN", "AtLeastProficientEnglish_MEDIAN", "PercentAdvancedMath_MEDIAN", "AtLeastProficientMath_MEDIAN", "SPP_HS_MEDIAN")#
+#
+#median^2 model for advanced English#
+mod = lm(advEng ~ median + I(median^2))#
+i=1#
+title = "Percent Advanced English Median Model"#
+modCode = "adv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfEng ~ median + I(median^2))#
+i=2#
+title = "Percent Proficient or Advanced English Median Model"#
+modCode = "profadv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advMath ~ median + I(median^2))#
+i=3#
+title = "Percent Advanced Math Median Model"#
+modCode = "adv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfMath ~ median + I(median^2))#
+i=4#
+title = "Percent Proficient or Advanced Math Median Model"#
+modCode = "profadv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)
+mean = allegheny[["MultipleZipEst_Mean"]]/10000#
+median = allegheny[["MultipleZipEst_Median"]]/10000#
+advEng = allegheny[["Percent_Advanced_English"]]#
+profEng = allegheny[["Percent_Proficient_English"]]#
+advProfEng = advEng + profEng#
+advMath = allegheny[["Percent_Advanced_Math"]]#
+profMath = allegheny[["Percent_Proficient_Math"]]#
+advProfMath = advMath + profMath
+printPDF <- function(mod, title, modCode) {#
+	#create the filename and main title for the residual plot#
+	filename = paste("res_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Residual Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+    #For the given model (mod), plot the fitted vs. residuals#
+  	plot(fitted(mod), residuals(mod), ylab="Residuals", xlab="Fitted", 		    	main=title)#
+   dev.off()#
+	#create the filename and main title for the normal quantile plot#
+	filename = paste("qq_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Normal Quantile Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+   #For the given model (mod), plot the theoretical vs. actual residuals#
+	m = mean(residuals(mod))#
+	s = sd(residuals(mod))#
+	n = length(residuals(mod))#
+	y = rnorm(n, mean=m, sd=s)#
+	qqplot(residuals(mod),y, ylab="Theoretical Residuals", xlab="Actual Residuals", 	main=title)#
+   dev.off()#
+}#
+#
+#Called for each interaction model, this function adds the model results to the ith column of the summInteraction matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeInteractionSummary <- function(summInteraction, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]  + 	anova(mod)$'Df'[4] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["mean","Estimate"]#
+	pBeta1 = coef(summary(mod))["mean","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["median","Estimate"]#
+	pBeta2 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta3 = coef(summary(mod))["mean:median","Estimate"]#
+	pBeta3 = coef(summary(mod))["mean:median","Pr(>|t|)"]#
+#
+	summInteraction[1,i] = observations#
+	summInteraction[2,i] = obsInMod#
+	summInteraction[3,i] = rSquared#
+	summInteraction[4,i] = pVal#
+	summInteraction[5,i] = beta0#
+	summInteraction[6,i] = pBeta0#
+	summInteraction[7,i] = beta1#
+	summInteraction[8,i] = pBeta1#
+	summInteraction[9,i] = beta2#
+	summInteraction[10,i] = pBeta2#
+	summInteraction[11,i] = beta3#
+	summInteraction[12,i] = pBeta3#
+	return(summInteraction)#
+}#
+#
+#Called for each median^2 model, this function adds the model results to the ith column of the summMedian matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeMedianSummary <- function(summMedian, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["median","Estimate"]#
+	pBeta1 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["I(median^2)","Estimate"]#
+	pBeta2 = coef(summary(mod))["I(median^2)","Pr(>|t|)"]#
+#
+	summMedian[1,i] = observations#
+	summMedian[2,i] = obsInMod#
+	summMedian[3,i] = rSquared#
+	summMedian[4,i] = pVal#
+	summMedian[5,i] = beta0#
+	summMedian[6,i] = pBeta0#
+	summMedian[7,i] = beta1#
+	summMedian[8,i] = pBeta1#
+	summMedian[9,i] = beta2#
+	summMedian[10,i] = pBeta2#
+	return(summMedian)#
+}
+mean = allegheny[["MultipleZipEst_Mean"]]/10000#
+median = allegheny[["MultipleZipEst_Median"]]/10000#
+advEng = allegheny[["Percent_Advanced_English"]]#
+profEng = allegheny[["Percent_Proficient_English"]]#
+advProfEng = advEng + profEng#
+advMath = allegheny[["Percent_Advanced_Math"]]#
+profMath = allegheny[["Percent_Proficient_Math"]]#
+advProfMath = advMath + profMath
+advPrfMath
+advProfMath
+advMath
+profMath
+allegheny = read.csv(file.choose(), header=T, sep=",")
+printPDF <- function(mod, title, modCode) {#
+	#create the filename and main title for the residual plot#
+	filename = paste("res_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Residual Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+    #For the given model (mod), plot the fitted vs. residuals#
+  	plot(fitted(mod), residuals(mod), ylab="Residuals", xlab="Fitted", 		    	main=title)#
+   dev.off()#
+	#create the filename and main title for the normal quantile plot#
+	filename = paste("qq_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Normal Quantile Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+   #For the given model (mod), plot the theoretical vs. actual residuals#
+	m = mean(residuals(mod))#
+	s = sd(residuals(mod))#
+	n = length(residuals(mod))#
+	y = rnorm(n, mean=m, sd=s)#
+	qqplot(residuals(mod),y, ylab="Theoretical Residuals", xlab="Actual Residuals", 	main=title)#
+   dev.off()#
+}#
+#
+#Called for each interaction model, this function adds the model results to the ith column of the summInteraction matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeInteractionSummary <- function(summInteraction, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]  + 	anova(mod)$'Df'[4] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["mean","Estimate"]#
+	pBeta1 = coef(summary(mod))["mean","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["median","Estimate"]#
+	pBeta2 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta3 = coef(summary(mod))["mean:median","Estimate"]#
+	pBeta3 = coef(summary(mod))["mean:median","Pr(>|t|)"]#
+#
+	summInteraction[1,i] = observations#
+	summInteraction[2,i] = obsInMod#
+	summInteraction[3,i] = rSquared#
+	summInteraction[4,i] = pVal#
+	summInteraction[5,i] = beta0#
+	summInteraction[6,i] = pBeta0#
+	summInteraction[7,i] = beta1#
+	summInteraction[8,i] = pBeta1#
+	summInteraction[9,i] = beta2#
+	summInteraction[10,i] = pBeta2#
+	summInteraction[11,i] = beta3#
+	summInteraction[12,i] = pBeta3#
+	return(summInteraction)#
+}#
+#
+#Called for each median^2 model, this function adds the model results to the ith column of the summMedian matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeMedianSummary <- function(summMedian, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["median","Estimate"]#
+	pBeta1 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["I(median^2)","Estimate"]#
+	pBeta2 = coef(summary(mod))["I(median^2)","Pr(>|t|)"]#
+#
+	summMedian[1,i] = observations#
+	summMedian[2,i] = obsInMod#
+	summMedian[3,i] = rSquared#
+	summMedian[4,i] = pVal#
+	summMedian[5,i] = beta0#
+	summMedian[6,i] = pBeta0#
+	summMedian[7,i] = beta1#
+	summMedian[8,i] = pBeta1#
+	summMedian[9,i] = beta2#
+	summMedian[10,i] = pBeta2#
+	return(summMedian)#
+}#
+#
+#################################
+### K-8 PSSA DATA REGRESSION ####
+#################################
+#
+#assign and calculate regression variables#
+mean = allegheny[["MultipleZipEst_Mean"]]/10000#
+median = allegheny[["MultipleZipEst_Median"]]/10000#
+advEng = allegheny[["Percent_Advanced_English"]]#
+profEng = allegheny[["Percent_Proficient_English"]]#
+advProfEng = advEng + profEng#
+advMath = allegheny[["Percent_Advanced_Math"]]#
+profMath = allegheny[["Percent_Proficient_Math"]]#
+advProfMath = advMath + profMath
+#Initialize the summInteraction matrix for holding interaction model summary results and add row and column names.#
+summInteraction <- matrix(nrow=12, ncol=5)#
+rownames(summInteraction) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "mean coeff", "prob coeff mean", "median coeff", "prob coeff median", "mean*median coeff", "prob coeff mean*median")#
+colnames(summInteraction) = c("PercentAdvancedEnglish_INTERACT", "AtLeastProficientEnglish_INTERACT", "PercentAdvancedMath_INTERACT", "AtLeastProficientMath_INTERACT", "SPP_HS_INTERACT")#
+#
+#interaction model for advanced English#
+mod = lm(advEng ~ mean + median + mean*median)#
+i=1#
+title = "Percent Advanced English Interaction Model"#
+modCode = "adv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for proficient or advanced English#
+mod = lm(advProfEng ~ mean + median + mean*median)#
+i=2#
+title = "Percent Proficient or Advanced English Interaction Model"#
+modCode = "profadv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for advanced math#
+mod = lm(advMath ~ mean + median + mean*median)#
+i=3#
+title = "Percent Advanced Math Interaction Model"#
+modCode = "adv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for proficient or advanced math#
+mod = lm(advProfMath ~ mean + median + mean*median)#
+i=4#
+title = "Percent Proficient or Advanced Math Interaction Model"#
+modCode = "profadv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)
+#Initialize the summModel matrix for holding median^2 model summary results and add row and column names.#
+summMedian <- matrix(nrow=10, ncol=5)#
+rownames(summMedian) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "median coeff", "prob coeff median", "median^2 coeff", "prob coeff median^2")#
+colnames(summMedian) = c("PercentAdvancedEnglish_MEDIAN", "AtLeastProficientEnglish_MEDIAN", "PercentAdvancedMath_MEDIAN", "AtLeastProficientMath_MEDIAN", "SPP_HS_MEDIAN")#
+#
+#median^2 model for advanced English#
+mod = lm(advEng ~ median + I(median^2))#
+i=1#
+title = "Percent Advanced English Median Model"#
+modCode = "adv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfEng ~ median + I(median^2))#
+i=2#
+title = "Percent Proficient or Advanced English Median Model"#
+modCode = "profadv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advMath ~ median + I(median^2))#
+i=3#
+title = "Percent Advanced Math Median Model"#
+modCode = "adv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfMath ~ median + I(median^2))#
+i=4#
+title = "Percent Proficient or Advanced Math Median Model"#
+modCode = "profadv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)
+score = allegheny[["HS_Score_2014_2015"]]#
+#
+#interaction model for HS SPP#
+mod = lm(score ~ mean + median + mean*median)#
+i=5#
+title = "High School SPP Interaction Model"#
+modCode = "hs-spp-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#median model for HS SPP#
+mod = lm(score ~ median + I(median^2))#
+i=5#
+title = "High School SPP Median Model"#
+modCode = "hs-spp-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)
+write.csv(summInteraction, file = "interaction.csv", na="")#
+#
+#write median^2 model summary results to a .csv file#
+write.csv(summMedian, file = "median.csv", na="")
+allegheny = read.csv(file.choose(), header=T, sep=",")
+attach(allegheny)
+printPDF <- function(mod, title, modCode) {#
+	#create the filename and main title for the residual plot#
+	filename = paste("res_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Residual Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+    #For the given model (mod), plot the fitted vs. residuals#
+  	plot(fitted(mod), residuals(mod), ylab="Residuals", xlab="Fitted", 		    	main=title)#
+   dev.off()#
+	#create the filename and main title for the normal quantile plot#
+	filename = paste("qq_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Normal Quantile Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+   #For the given model (mod), plot the theoretical vs. actual residuals#
+	m = mean(residuals(mod))#
+	s = sd(residuals(mod))#
+	n = length(residuals(mod))#
+	y = rnorm(n, mean=m, sd=s)#
+	qqplot(residuals(mod),y, ylab="Theoretical Residuals", xlab="Actual Residuals", 	main=title)#
+   dev.off()#
+}#
+#
+#Called for each interaction model, this function adds the model results to the ith column of the summInteraction matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeInteractionSummary <- function(summInteraction, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]  + 	anova(mod)$'Df'[4] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["mean","Estimate"]#
+	pBeta1 = coef(summary(mod))["mean","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["median","Estimate"]#
+	pBeta2 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta3 = coef(summary(mod))["mean:median","Estimate"]#
+	pBeta3 = coef(summary(mod))["mean:median","Pr(>|t|)"]#
+#
+	summInteraction[1,i] = observations#
+	summInteraction[2,i] = obsInMod#
+	summInteraction[3,i] = rSquared#
+	summInteraction[4,i] = pVal#
+	summInteraction[5,i] = beta0#
+	summInteraction[6,i] = pBeta0#
+	summInteraction[7,i] = beta1#
+	summInteraction[8,i] = pBeta1#
+	summInteraction[9,i] = beta2#
+	summInteraction[10,i] = pBeta2#
+	summInteraction[11,i] = beta3#
+	summInteraction[12,i] = pBeta3#
+	return(summInteraction)#
+}#
+#
+#Called for each median^2 model, this function adds the model results to the ith column of the summMedian matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeMedianSummary <- function(summMedian, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["median","Estimate"]#
+	pBeta1 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["I(median^2)","Estimate"]#
+	pBeta2 = coef(summary(mod))["I(median^2)","Pr(>|t|)"]#
+#
+	summMedian[1,i] = observations#
+	summMedian[2,i] = obsInMod#
+	summMedian[3,i] = rSquared#
+	summMedian[4,i] = pVal#
+	summMedian[5,i] = beta0#
+	summMedian[6,i] = pBeta0#
+	summMedian[7,i] = beta1#
+	summMedian[8,i] = pBeta1#
+	summMedian[9,i] = beta2#
+	summMedian[10,i] = pBeta2#
+	return(summMedian)#
+}#
+#
+#################################
+### K-8 PSSA DATA REGRESSION ####
+#################################
+#
+#assign and calculate regression variables#
+mean = allegheny[["MultipleZipEst_Mean"]]/10000#
+median = allegheny[["MultipleZipEst_Median"]]/10000#
+advEng = allegheny[["Percent_Advanced_English"]]#
+profEng = allegheny[["Percent_Proficient_English"]]#
+advProfEng = advEng + profEng#
+advMath = allegheny[["Percent_Advanced_Math"]]#
+profMath = allegheny[["Percent_Proficient_Math"]]#
+advProfMath = advMath + profMath#
+#
+#nrows <- complete.cases(advEng)#
+#nrows = as.numeric(nrows)#
+#sum(nrows)#
+#complete observations = 203#
+#
+############## MEAN + MEDIAN + MEAN*MEDIAN #################
+#
+#Initialize the summInteraction matrix for holding interaction model summary results and add row and column names.#
+summInteraction <- matrix(nrow=12, ncol=5)#
+rownames(summInteraction) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "mean coeff", "prob coeff mean", "median coeff", "prob coeff median", "mean*median coeff", "prob coeff mean*median")#
+colnames(summInteraction) = c("PercentAdvancedEnglish_INTERACT", "AtLeastProficientEnglish_INTERACT", "PercentAdvancedMath_INTERACT", "AtLeastProficientMath_INTERACT", "SPP_HS_INTERACT")#
+#
+#interaction model for advanced English#
+mod = lm(advEng ~ mean + median + mean*median)#
+i=1#
+title = "Percent Advanced English Interaction Model"#
+modCode = "adv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for proficient or advanced English#
+mod = lm(advProfEng ~ mean + median + mean*median)#
+i=2#
+title = "Percent Proficient or Advanced English Interaction Model"#
+modCode = "profadv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for advanced math#
+mod = lm(advMath ~ mean + median + mean*median)#
+i=3#
+title = "Percent Advanced Math Interaction Model"#
+modCode = "adv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for proficient or advanced math#
+mod = lm(advProfMath ~ mean + median + mean*median)#
+i=4#
+title = "Percent Proficient or Advanced Math Interaction Model"#
+modCode = "profadv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+############## MEDIAN + MEDIAN^2 #################
+#
+#Initialize the summModel matrix for holding median^2 model summary results and add row and column names.#
+summMedian <- matrix(nrow=10, ncol=5)#
+rownames(summMedian) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "median coeff", "prob coeff median", "median^2 coeff", "prob coeff median^2")#
+colnames(summMedian) = c("PercentAdvancedEnglish_MEDIAN", "AtLeastProficientEnglish_MEDIAN", "PercentAdvancedMath_MEDIAN", "AtLeastProficientMath_MEDIAN", "SPP_HS_MEDIAN")#
+#
+#median^2 model for advanced English#
+mod = lm(advEng ~ median + I(median^2))#
+i=1#
+title = "Percent Advanced English Median Model"#
+modCode = "adv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfEng ~ median + I(median^2))#
+i=2#
+title = "Percent Proficient or Advanced English Median Model"#
+modCode = "profadv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advMath ~ median + I(median^2))#
+i=3#
+title = "Percent Advanced Math Median Model"#
+modCode = "adv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfMath ~ median + I(median^2))#
+i=4#
+title = "Percent Proficient or Advanced Math Median Model"#
+modCode = "profadv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)
+score = allegheny[["HS_Score_2014_2015"]]#
+#
+#interaction model for HS SPP#
+mod = lm(score ~ mean + median + mean*median)#
+i=5#
+title = "High School SPP Interaction Model"#
+modCode = "hs-spp-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#median model for HS SPP#
+mod = lm(score ~ median + I(median^2))#
+i=5#
+title = "High School SPP Median Model"#
+modCode = "hs-spp-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#### WRITE RESULTS #####
+#
+#write interaction model summary results to a .csv file#
+write.csv(summInteraction, file = "interaction.csv", na="")#
+#
+#write median^2 model summary results to a .csv file#
+write.csv(summMedian, file = "median.csv", na="")
+allegheny = read.csv("AlleghenyData.csv")
+attach(allegheny)#
+#
+#list columns#
+#colnames(allegheny)#
+#
+#[1] "School_Number"               "LEA_Name"                   #
+#[3] "School_Name"                 "Adj_Mean"                   #
+#[5] "MultipleZipEst_Mean"         "Adj_Median"                 #
+#[7] "MultipleZipEst_Median"       "Score_2012_2013"            #
+#[9] "Score_2013_2014"             "HS_Score_2014_2015"         #
+#[11] "Percent_Advanced_English"    "Percent_Proficient_English" #
+#[13] "Percent_Basic_English"       "Percent_Below_Basic_English"#
+#[15] "Percent_Advanced_Math"       "Percent_Proficient_Math"    #
+#[17] "Percent_Basic_Math"          "Percent_Below_Basic_Math"   #
+#[19] "Percent_Advanced_Science"    "Percent_Proficient_Science" #
+#[21] "Percent_Basic_Science"       "Percent_Below_Basic_Science"#
+#
+#Called for each model, this function prints two plots as pdf files: Residual Plot and Normal Quantile Plot. It receives the model results, title for the main title of the graphs, and a model code for the filename. #
+printPDF <- function(mod, title, modCode) {#
+	#create the filename and main title for the residual plot#
+	filename = paste("res_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Residual Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+    #For the given model (mod), plot the fitted vs. residuals#
+  	plot(fitted(mod), residuals(mod), ylab="Residuals", xlab="Fitted", 		    	main=title)#
+   dev.off()#
+	#create the filename and main title for the normal quantile plot#
+	filename = paste("qq_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Normal Quantile Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+   #For the given model (mod), plot the theoretical vs. actual residuals#
+	m = mean(residuals(mod))#
+	s = sd(residuals(mod))#
+	n = length(residuals(mod))#
+	y = rnorm(n, mean=m, sd=s)#
+	qqplot(residuals(mod),y, ylab="Theoretical Residuals", xlab="Actual Residuals", 	main=title)#
+   dev.off()#
+}#
+#
+#Called for each interaction model, this function adds the model results to the ith column of the summInteraction matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeInteractionSummary <- function(summInteraction, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]  + 	anova(mod)$'Df'[4] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["mean","Estimate"]#
+	pBeta1 = coef(summary(mod))["mean","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["median","Estimate"]#
+	pBeta2 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta3 = coef(summary(mod))["mean:median","Estimate"]#
+	pBeta3 = coef(summary(mod))["mean:median","Pr(>|t|)"]#
+#
+	summInteraction[1,i] = observations#
+	summInteraction[2,i] = obsInMod#
+	summInteraction[3,i] = rSquared#
+	summInteraction[4,i] = pVal#
+	summInteraction[5,i] = beta0#
+	summInteraction[6,i] = pBeta0#
+	summInteraction[7,i] = beta1#
+	summInteraction[8,i] = pBeta1#
+	summInteraction[9,i] = beta2#
+	summInteraction[10,i] = pBeta2#
+	summInteraction[11,i] = beta3#
+	summInteraction[12,i] = pBeta3#
+	return(summInteraction)#
+}#
+#
+#Called for each median^2 model, this function adds the model results to the ith column of the summMedian matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeMedianSummary <- function(summMedian, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["median","Estimate"]#
+	pBeta1 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["I(median^2)","Estimate"]#
+	pBeta2 = coef(summary(mod))["I(median^2)","Pr(>|t|)"]#
+#
+	summMedian[1,i] = observations#
+	summMedian[2,i] = obsInMod#
+	summMedian[3,i] = rSquared#
+	summMedian[4,i] = pVal#
+	summMedian[5,i] = beta0#
+	summMedian[6,i] = pBeta0#
+	summMedian[7,i] = beta1#
+	summMedian[8,i] = pBeta1#
+	summMedian[9,i] = beta2#
+	summMedian[10,i] = pBeta2#
+	return(summMedian)#
+}#
+#
+#################################
+### K-8 PSSA DATA REGRESSION ####
+#################################
+#
+#assign and calculate regression variables#
+mean = allegheny[["MultipleZipEst_Mean"]]/10000#
+median = allegheny[["MultipleZipEst_Median"]]/10000#
+advEng = allegheny[["Percent_Advanced_English"]]#
+profEng = allegheny[["Percent_Proficient_English"]]#
+advProfEng = advEng + profEng#
+advMath = allegheny[["Percent_Advanced_Math"]]#
+profMath = allegheny[["Percent_Proficient_Math"]]#
+advProfMath = advMath + profMath#
+#
+#nrows <- complete.cases(advEng)#
+#nrows = as.numeric(nrows)#
+#sum(nrows)#
+#complete observations = 203#
+#
+############## MEAN + MEDIAN + MEAN*MEDIAN #################
+#
+#Initialize the summInteraction matrix for holding interaction model summary results and add row and column names.#
+summInteraction <- matrix(nrow=12, ncol=5)#
+rownames(summInteraction) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "mean coeff", "prob coeff mean", "median coeff", "prob coeff median", "mean*median coeff", "prob coeff mean*median")#
+colnames(summInteraction) = c("PercentAdvancedEnglish_INTERACT", "AtLeastProficientEnglish_INTERACT", "PercentAdvancedMath_INTERACT", "AtLeastProficientMath_INTERACT", "SPP_HS_INTERACT")
+mod = lm(advEng ~ mean + median + I(mean*median))#
+i=1#
+title = "Percent Advanced English Interaction Model"#
+modCode = "adv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)
+anova(mod)
+summary(mod)
+mod = lm(advProfEng ~ mean + median + mean*median)#
+i=2#
+title = "Percent Proficient or Advanced English Interaction Model"#
+modCode = "profadv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)
+anova(mod)
+printPDF <- function(mod, title, modCode) {#
+	#create the filename and main title for the residual plot#
+	filename = paste("res_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Residual Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+    #For the given model (mod), plot the fitted vs. residuals#
+  	plot(fitted(mod), residuals(mod), ylab="Residuals", xlab="Fitted", 		    	main=title)#
+   dev.off()#
+	#create the filename and main title for the normal quantile plot#
+	filename = paste("qq_", modCode, ".pdf", sep = "", collapse = NULL)#
+	title = paste("Normal Quantile Plot:", title, sep = " ", collapse = NULL)#
+   pdf(filename)#
+   #For the given model (mod), plot the theoretical vs. actual residuals#
+	m = mean(residuals(mod))#
+	s = sd(residuals(mod))#
+	n = length(residuals(mod))#
+	y = rnorm(n, mean=m, sd=s)#
+	qqplot(residuals(mod),y, ylab="Theoretical Residuals", xlab="Actual Residuals", 	main=title)#
+   dev.off()#
+}#
+#
+#Called for each interaction model, this function adds the model results to the ith column of the summInteraction matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeInteractionSummary <- function(summInteraction, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3]  + 	anova(mod)$'Df'[4] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["mean","Estimate"]#
+	pBeta1 = coef(summary(mod))["mean","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["median","Estimate"]#
+	pBeta2 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta3 = coef(summary(mod))["I(mean * median)","Estimate"]#
+	pBeta3 = coef(summary(mod))["I(mean * median)","Pr(>|t|)"]#
+#
+	summInteraction[1,i] = observations#
+	summInteraction[2,i] = obsInMod#
+	summInteraction[3,i] = rSquared#
+	summInteraction[4,i] = pVal#
+	summInteraction[5,i] = beta0#
+	summInteraction[6,i] = pBeta0#
+	summInteraction[7,i] = beta1#
+	summInteraction[8,i] = pBeta1#
+	summInteraction[9,i] = beta2#
+	summInteraction[10,i] = pBeta2#
+	summInteraction[11,i] = beta3#
+	summInteraction[12,i] = pBeta3#
+	return(summInteraction)#
+}#
+#
+#Called for each median^2 model, this function adds the model results to the ith column of the summMedian matrix. It receives the matrix, model results, and model number, i, and returns the modified matrix. #
+storeMedianSummary <- function(summMedian, mod, i) {#
+	observations = length(allegheny$School_Number)#
+	obsInMod = anova(mod)$'Df'[1] + anova(mod)$'Df'[2]  + anova(mod)$'Df'[3] + 1#
+	rSquared <- summary(mod)$r.squared#
+	pVal <- anova(mod)$'Pr(>F)'[1]#
+	beta0 = coef(summary(mod))["(Intercept)","Estimate"]#
+	pBeta0 = coef(summary(mod))["(Intercept)","Pr(>|t|)"]#
+	beta1 = coef(summary(mod))["median","Estimate"]#
+	pBeta1 = coef(summary(mod))["median","Pr(>|t|)"]#
+	beta2 = coef(summary(mod))["I(median^2)","Estimate"]#
+	pBeta2 = coef(summary(mod))["I(median^2)","Pr(>|t|)"]#
+#
+	summMedian[1,i] = observations#
+	summMedian[2,i] = obsInMod#
+	summMedian[3,i] = rSquared#
+	summMedian[4,i] = pVal#
+	summMedian[5,i] = beta0#
+	summMedian[6,i] = pBeta0#
+	summMedian[7,i] = beta1#
+	summMedian[8,i] = pBeta1#
+	summMedian[9,i] = beta2#
+	summMedian[10,i] = pBeta2#
+	return(summMedian)#
+}#
+#
+#################################
+### K-8 PSSA DATA REGRESSION ####
+#################################
+#
+#assign and calculate regression variables#
+mean = allegheny[["MultipleZipEst_Mean"]]/10000#
+median = allegheny[["MultipleZipEst_Median"]]/10000#
+advEng = allegheny[["Percent_Advanced_English"]]#
+profEng = allegheny[["Percent_Proficient_English"]]#
+advProfEng = advEng + profEng#
+advMath = allegheny[["Percent_Advanced_Math"]]#
+profMath = allegheny[["Percent_Proficient_Math"]]#
+advProfMath = advMath + profMath#
+#
+#nrows <- complete.cases(advEng)#
+#nrows = as.numeric(nrows)#
+#sum(nrows)#
+#complete observations = 203#
+#
+############## MEAN + MEDIAN + MEAN*MEDIAN #################
+#
+#Initialize the summInteraction matrix for holding interaction model summary results and add row and column names.#
+summInteraction <- matrix(nrow=12, ncol=5)#
+rownames(summInteraction) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "mean coeff", "prob coeff mean", "median coeff", "prob coeff median", "mean*median coeff", "prob coeff mean*median")#
+colnames(summInteraction) = c("PercentAdvancedEnglish_INTERACT", "AtLeastProficientEnglish_INTERACT", "PercentAdvancedMath_INTERACT", "AtLeastProficientMath_INTERACT", "SPP_HS_INTERACT")#
+#
+#interaction model for advanced English#
+mod = lm(advEng ~ mean + median + I(mean*median))#
+i=1#
+title = "Percent Advanced English Interaction Model"#
+modCode = "adv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)
+mod = lm(advProfEng ~ mean + median + I(mean*median))#
+i=2#
+title = "Percent Proficient or Advanced English Interaction Model"#
+modCode = "profadv-eng-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for advanced math#
+mod = lm(advMath ~ mean + median + I(mean*median))#
+i=3#
+title = "Percent Advanced Math Interaction Model"#
+modCode = "adv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#interaction model for proficient or advanced math#
+mod = lm(advProfMath ~ mean + median + I(mean*median))#
+i=4#
+title = "Percent Proficient or Advanced Math Interaction Model"#
+modCode = "profadv-math-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+############## MEDIAN + MEDIAN^2 #################
+#
+#Initialize the summModel matrix for holding median^2 model summary results and add row and column names.#
+summMedian <- matrix(nrow=10, ncol=5)#
+rownames(summMedian) = c("observations", "observations in model", "r squared", "p value", "intercept", "prob intercept", "median coeff", "prob coeff median", "median^2 coeff", "prob coeff median^2")#
+colnames(summMedian) = c("PercentAdvancedEnglish_MEDIAN", "AtLeastProficientEnglish_MEDIAN", "PercentAdvancedMath_MEDIAN", "AtLeastProficientMath_MEDIAN", "SPP_HS_MEDIAN")#
+#
+#median^2 model for advanced English#
+mod = lm(advEng ~ median + I(median^2))#
+i=1#
+title = "Percent Advanced English Median Model"#
+modCode = "adv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfEng ~ median + I(median^2))#
+i=2#
+title = "Percent Proficient or Advanced English Median Model"#
+modCode = "profadv-eng-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advMath ~ median + I(median^2))#
+i=3#
+title = "Percent Advanced Math Median Model"#
+modCode = "adv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#median^2 model for #
+mod = lm(advProfMath ~ median + I(median^2))#
+i=4#
+title = "Percent Proficient or Advanced Math Median Model"#
+modCode = "profadv-math-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+###############################
+### HS SSP DATA REGRESSION ####
+###############################
+#
+#assign and calculate regression variables#
+score = allegheny[["HS_Score_2014_2015"]]#
+#
+#interaction model for HS SPP#
+mod = lm(score ~ mean + median + mean*median)#
+i=5#
+title = "High School SPP Interaction Model"#
+modCode = "hs-spp-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#median model for HS SPP#
+mod = lm(score ~ median + I(median^2))#
+i=5#
+title = "High School SPP Median Model"#
+modCode = "hs-spp-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#### WRITE RESULTS #####
+#
+#write interaction model summary results to a .csv file#
+write.csv(summInteraction, file = "interaction.csv", na="")#
+#
+#write median^2 model summary results to a .csv file#
+write.csv(summMedian, file = "median.csv", na="")
+#assign and calculate regression variables#
+score = allegheny[["HS_Score_2014_2015"]]#
+#
+#interaction model for HS SPP#
+mod = lm(score ~ mean + median + I(mean*median))#
+i=5#
+title = "High School SPP Interaction Model"#
+modCode = "hs-spp-int"#
+printPDF(mod, title, modCode)#
+summInteraction = storeInteractionSummary(summInteraction, mod, i)#
+#
+#median model for HS SPP#
+mod = lm(score ~ median + I(median^2))#
+i=5#
+title = "High School SPP Median Model"#
+modCode = "hs-spp-med"#
+printPDF(mod, title, modCode)#
+summMedian = storeMedianSummary(summMedian, mod, i)#
+#
+#### WRITE RESULTS #####
+#
+#write interaction model summary results to a .csv file#
+write.csv(summInteraction, file = "interaction.csv", na="")#
+#
+#write median^2 model summary results to a .csv file#
+write.csv(summMedian, file = "median.csv", na="")
+r1 = c(12, -15, 20)#
+r2 = c(2, 23, 78)#
+Ar = rbind(r1, r2)#
+Ar#
+attributes(Ar)
+dimnames(Ar)[[2]] = c("revenue", "cost", "profit")
+r1 = c(12, -15, 20)#
+r2 = c(2, 23, 78)#
+Ar = rbind(r1, r2)#
+Ar#
+attributes(Ar)
+dimnames(Ar)[[2]] = c("revenue", "cost", "profit")
+Ar
+c1 = c(12, 2)#
+c2 = c(-15, 23)#
+c3 = c(20, 78)#
+Ac = cbind(c1, c2, c3)#
+Ac#
+attributes(Ac)
+dimnames(Ac)[[2]] = c("revenue", "cost", "profit")#
+dimnames(Ac)[[1]] = c("this year", "last year")
+attributes(Ac)
+Ac
+A = c(15, 25, -12, 22, 53, -2)#
+A = matrix(A, nrow=2, ncol=3)#
+B = c(-15, -25, 12, -22, -53, 2)#
+B = matrix(B, nrow=2, ncol=3)
+A
+B
+A+B
+c = A+B
+c
+C = A+B
+C
+A[,2]#
+B[1,]#
+C[2,2]
+P = matrix(1:4,2,2)#
+Q = matrix(11:14,2,2)#
+P#
+Q
+PQ = P%*%Q
+PQ
+QP = Q%*%P
+QP
+A=c(15,25,-12,22,53,-2)#
+A=matrix(A,2,3)
+A
+t(A)
+B=c(10, 20, -17, 17, -7)#
+B=matrix(B, 2, 3)#
+t(B)
+B
+B=c(10,20,-17,17,58,-7)#
+B=matrix(B, 2, 3)#
+t(B)
+C=A+B
+C
+t(C)#
+t(A)+t(B)
+A=c(15,25,-12,22,53,-2)#
+A=matrix(A,2,3)#
+B=matrix(1:9,3,3)
+A*B
+A
+B
+A=c(15,25,-12,22,53,-2)#
+A=matrix(A,2,3)#
+B=matrix(1:9,3,3)#
+C=t(A%*%B)#
+D=t(B)%*%t(A)#
+C; D
+set.seed(452)#
+x=rnorm(20)#
+y=rnorm(20)#
+z=rnorm(20)
+x
+y
+z
+sym22=crossprod(cbind(x,y)); sym22
+t(sym22)
+sym33=crossprod(cbind(x,y,z)); sym33
+t(sym33)
+m=matrix(cbind(x,y,z))
+m
+m=cbind(x,y,z)
+m
+crossprod(m)
+m %*% t(m)
+t(m) %*% m
+crossprod(m)
+x = runif(25,0,1)
+x
+x = runif(25000,0,1)
+y = runif(25000,0,1)
+x
+y
+if(x^2 + y^2 >= 1) then count = count + 1
+if(x^2 + y^2 >= 1) count = count + 1
+if(x^2 + y^2 >= 1) {count = count + 1}
+c = x^2 + y^2
+c
+count = 0
+if (c <= 1) {count = count + 1}
+c
+if (sqrt(c) <= 1) {count = count + 1}
+count
+c = sqrt(c)
+c
+length(which(c<=1))
+19536/25000
+seed
+25000/19536
+set.seed(1)
+x = runif(25000,0,1)
+y = runif(25000,0,1)
+set.seed(1)
+y = runif(25000,0,1)
+25000-19536
+c = sqrt(x^2 + y^2)
+c
+length(which(c<=1))
+17675/25000
+25000/17675
+N <- 1000000#
+R <- 1#
+x <- runif(N, min= -R, max= R)#
+y <- runif(N, min= -R, max= R)#
+is.inside <- (x^2 + y^2) <= R^2#
+pi.estimate <- 4 * sum(is.inside) / N#
+pi.estimate
+(17674*4)/25000
+plot.new()#
+plot.window(xlim = 1.1 * R * c(-1, 1), ylim = 1.1 * R * c(-1, 1))#
+points(x[ is.inside], y[ is.inside], pch = '.', col = "blue")#
+points(x[!is.inside], y[!is.inside], pch = '.', col = "red")
+library(Matrix)
+m = Matrix(1:4, 2, 2)#
+m
+symmpart(m)#
+skewpart(m)
+symm = symmpart(m)#
+skew = skewpart(m)
+t(symm)
+m2 = symm + skew
+m2
+install.packages("ggplot2")
+states_map <- map_data("state")
+library(maps)
+library(midwest)
+library(ggplot2)
+data <- read.csv(file.choose(), header=T, sep=",")#read csv file
+data
+attach(data)
+colnames(data)
+apropos("confusion")
+library(appliedpredictivemodeling)
+library(AppliedPredictiveModeling)
+install.packages("AppliedPredictiveModeling")
+library(AppliedPredictiveModeling)
+apropos("confusion")
+data(segmentationOriginal)
+segData <- subset(segmentationOriginal, Case == "Train")
+segmentationOriginal
+segData
+install.packages("HSAUR")
+library("HSAUR")
+vignette("Ch_introduction_to_R", package = "HSAUR")
+data("Forbes2000", package = "HSAUR")
+ls()
+print(FOrbes2000)
+print(Forbes2000)
+setwd("~/Google Drive/_Data Science Johns Hopkins/Getting and Cleaning Data/wk2_quiz")
+library(httr)#
+oauth_endpoints("github")
+myapp <- oauth_app("github", key = "cbd57087ef6c7f1a4a6f", secret = "f14070756a5e52c13ca5940669295f3a3a4fdd73")
+gtoken <- config(token = github_token)#
+req <- GET("https://api.github.com/rate_limit", gtoken)#
+stop_for_status(req)#
+content(req)
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+gtoken <- config(token = github_token)
+req <- GET("https://api.github.com/rate_limit", gtoken)
+stop_for_status(req)
+content(req)
+# OR:#
+req <- with_config(gtoken, GET("https://api.github.com/rate_limit"))#
+stop_for_status(req)#
+content(req)
+myapp <- oauth_app("github", key = "be78ba9704f37f8dd58b", secret = "b9baeabb26a9b0856d5ef37753441c56149e4ec4")
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+myapp <- oauth_app("github", key = "a438e9b1f9e1667f1a6a", secret = "90973cb93cdb9032d1d109f5d3a4b6e06f5ea86a")
+myapp
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+myapp <- oauth_app("github", key = "a438e9b1f9e1667f1a6a", secret = "90973cb93cdb9032d1d109f5d3a4b6e06f5ea86a")
+myapp
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+myapp <- oauth_app("github", key = "a438e9b1f9e1667f1a6a", secret = "efbf9b21c0c9d581e9c8e55f953385f0b44b998a")
+myapp
+myapp <- oauth_app("github", key = "cbd57087ef6c7f1a4a6f", secret = "f14070756a5e52c13ca5940669295f3a3a4fdd73")
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+gtoken <- config(token = github_token)
+req <- GET("https://github.com/hadley/httr/blob/master/demo/oauth2-github.r", gtoken)
+stop_for_status(req)
+content(req)
+myapp <- oauth_app("github", key = "cbd57087ef6c7f1a4a6f", secret = "f14070756a5e52c13ca5940669295f3a3a4fdd73")
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+gtoken <- config(token = github_token)#
+req <- GET("https://api.github.com/rate_limit", gtoken)#
+stop_for_status(req)#
+content(req)
+gtoken <- config(token = github_token)#
+req <- GET("https://github.com/hadley/httr/blob/master/demo/oauth2-github.r", gtoken)#
+stop_for_status(req)#
+content(req)
+req <- GET("https://api.github.com/users/jtleek/repos", gtoken)#
+stop_for_status(req)#
+content(req)
+install.packages(jsonlite)
+install.packages("jsonlite")
+gtoken <- config(token = github_token)#
+req <- GET("https://api.github.com/users/jleek/repos", gtoken)#
+stop_for_status(req)#
+content(req)
+req <- GET("https://api.github.com/users/jleek/repos", gtoken)
+req
+myapp <- oauth_app("github", key = "cbd57087ef6c7f1a4a6f", secret = "f14070756a5e52c13ca5940669295f3a3a4fdd73")
+github_token <- oauth2.0_token(oauth_endpoints("github"), myapp)
+gtoken <- config(token = github_token)
+req <- GET("https://api.github.com/users/jtleek/repos", gtoken)
+stop_for_status(req)
+content(req)
+library(jsonlite)#
+json1 <- content(req)#
+json2 <- jsonlite::fromJSON(toJSON(json1))
+json2[1, 1:4]
+json2[1, ]
+datasharing <- subset(json2, name == "datasharing")
+head(datasharing)
+datasharing[,"created_at"]
+setwd("~/Google Drive/_Data Science Johns Hopkins/Getting and Cleaning Data/wk2_quiz")
+library(RMySQL)#
+download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv", "acs.csv")
+acs <- read.csv("acs.csv")
+head(acs)
+sqldf("select pwgtp1 from acs")
+library(RMySQL)
+sqldf("select pwgtp1 from acs")
+install.packages("sqldf")
+sqldf("select pwgtp1 from acs")
+library(sqldf)
+sqldf("select pwgtp1 from acs")
+sqldf("select * from acs")
+sqldf("select * from acs where AGEP < 50 and pwgtp1")
+sqldf("select pqgtp1 from acs where AGEP < 50")
+acs <- read.csv.sql("acs.csv")
+warnings()
+sqldf("select pwgtp1 from acs")
+head(acs)
+read.csv.sql(file, sql = "select pwgtp1 from acs", header = TRUE, sep = ",")
+acs <- read.csv.sql(file, sql = "select pwgtp1 from acs", header = TRUE, sep = ",")
